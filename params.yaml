@@ -1,0 +1,25 @@
+base:
+  random_state: 42
+  target_col: Species
+
+data_source:
+  s3_source: data_source/Iris.csv
+
+data_processed: data/raw/Iris.csv
+
+data_split:
+  train: data/processed/train.csv
+  test: data/processed/test.csv
+  t_size: 0.2
+
+estimators:
+  DecisionTreeClassifier:
+    params:
+      criterion: gini
+      max_depth: 4
+
+model_dir: saved_models
+
+reports:
+  params: report/params.json
+  scores: report/scores.json
