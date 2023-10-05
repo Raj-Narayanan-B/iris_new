@@ -1,0 +1,42 @@
+schema: '2.0'
+stages:
+  process_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data_source/Iris.csv
+      hash: md5
+      md5: 717820ef0af287ff346c5cabfb4c612c
+      size: 5107
+    - path: src/get_data.py
+      hash: md5
+      md5: d7791fa3cd46cb1ef412e18e7f3f7472
+      size: 567
+    - path: src/load_data.py
+      hash: md5
+      md5: a8d7aec880d4452bea731af7d5b0901d
+      size: 555
+    outs:
+    - path: data/raw/Iris.csv
+      hash: md5
+      md5: 5d8dfc1ef0464786e48e20a74208457c
+      size: 2913
+  data_split:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/raw/Iris.csv
+      hash: md5
+      md5: 5d8dfc1ef0464786e48e20a74208457c
+      size: 2913
+    - path: src/split_data.py
+      hash: md5
+      md5: 808d372ca6150a5092117d650bc8dbfc
+      size: 810
+    outs:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 4ca9145340702e3daa1f21743ad0ca0d
+      size: 633
+    - path: data/processed/train.csv
+      hash: md5
+      md5: fe80ed4c07467eb4e39f9f6049a5051a
+      size: 2343
