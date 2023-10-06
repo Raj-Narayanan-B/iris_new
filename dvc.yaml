@@ -16,3 +16,22 @@ stages:
     outs:
       - data/processed/train.csv
       - data/processed/test.csv
+
+  train_test:
+    cmd: python src/train_test.py --config=params.yaml
+    deps:
+      - src/train_test.py
+      - data/processed/train.csv
+      - data/processed/test.csv
+    params:
+      - estimators.DecisionTreeClassifier.params.criterion
+      - estimators.DecisionTreeClassifier.params.max_depth
+
+    metrics:
+      - report/scores.json:
+          cache: false
+      - report/params.json:
+          cache: false
+      
+    outs:
+      - saved_models/model.joblib

@@ -1,0 +1,4 @@
+{
+    "criterion": "gini",
+    "max_depth": 2
+}

@@ -1,0 +1,6 @@
+[core]
+    remote = iris_nlops
+['remote "iris_mlops"']
+    url = https://drive.google.com/drive/folders/1M7VfVBh1foRO5gnghBSk3xd0tCnUCjzt
+['remote "iris_nlops"']
+    url = gdrive://1M7VfVBh1foRO5gnghBSk3xd0tCnUCjzt

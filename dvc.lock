@@ -40,3 +40,35 @@ stages:
       hash: md5
       md5: fe80ed4c07467eb4e39f9f6049a5051a
       size: 2343
+  train_test:
+    cmd: python src/train_test.py --config=params.yaml
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 4ca9145340702e3daa1f21743ad0ca0d
+      size: 633
+    - path: data/processed/train.csv
+      hash: md5
+      md5: fe80ed4c07467eb4e39f9f6049a5051a
+      size: 2343
+    - path: src/train_test.py
+      hash: md5
+      md5: 195d19a1b07fd1f170df1427b9045184
+      size: 2115
+    params:
+      params.yaml:
+        estimators.DecisionTreeClassifier.params.criterion: gini
+        estimators.DecisionTreeClassifier.params.max_depth: 2
+    outs:
+    - path: report/params.json
+      hash: md5
+      md5: 39caadd9657e23626dca3bc37c9d3c3c
+      size: 50
+    - path: report/scores.json
+      hash: md5
+      md5: 2baee0139b1d71e721550af4145f8e8a
+      size: 46
+    - path: saved_models/model.joblib
+      hash: md5
+      md5: 5ab3c4d0ef33e360e82374bc12518727
+      size: 2097

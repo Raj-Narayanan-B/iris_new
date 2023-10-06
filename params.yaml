@@ -16,7 +16,7 @@ estimators:
   DecisionTreeClassifier:
     params:
       criterion: gini
-      max_depth: 4
+      max_depth: 2
 
 model_dir: saved_models
 
