@@ -1,4 +1,4 @@
 {
-    "criterion": "gini",
-    "max_depth": 2
+    "criterion": "entropy",
+    "max_depth": 1
 }

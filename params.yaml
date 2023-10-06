@@ -15,8 +15,8 @@ data_split:
 estimators:
   DecisionTreeClassifier:
     params:
-      criterion: gini
-      max_depth: 2
+      criterion: entropy
+      max_depth: 1
 
 model_dir: saved_models
 

@@ -57,18 +57,18 @@ stages:
       size: 2115
     params:
       params.yaml:
-        estimators.DecisionTreeClassifier.params.criterion: gini
-        estimators.DecisionTreeClassifier.params.max_depth: 2
+        estimators.DecisionTreeClassifier.params.criterion: entropy
+        estimators.DecisionTreeClassifier.params.max_depth: 1
     outs:
     - path: report/params.json
       hash: md5
-      md5: 39caadd9657e23626dca3bc37c9d3c3c
-      size: 50
+      md5: d5ee79f45eeb66a8c8665aa5c8121c7f
+      size: 53
     - path: report/scores.json
       hash: md5
-      md5: 2baee0139b1d71e721550af4145f8e8a
+      md5: 657910a0b996a6ec8cd43f11dfecdd1c
       size: 46
     - path: saved_models/model.joblib
       hash: md5
-      md5: 5ab3c4d0ef33e360e82374bc12518727
-      size: 2097
+      md5: e5cfdf0a74138b65bb40b9cc90180a3e
+      size: 1921
