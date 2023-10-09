@@ -12,4 +12,3 @@ tox
 pytest
 gunicorn
 flake8
-PyYAML 
