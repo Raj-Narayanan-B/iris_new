@@ -19,11 +19,11 @@ jobs:
       - name: Python Setup
         uses: actions/setup-python@v2
         with: 
-          python-version: 3.11.5
+          python-version: 3.11.4
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install PyYAML
+          pip install PyYAML pytest
           if [-f requirements.txt]; then pip install -r requirements.txt; fi
       - name: Testing with pytest
         run: |
