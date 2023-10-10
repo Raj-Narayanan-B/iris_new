@@ -28,4 +28,6 @@ jobs:
       #   run: |
       #     tox
       - name: Run dvc.repro
-        run: dvc repro
+        run: |
+          dvc pull
+          dvc repro
