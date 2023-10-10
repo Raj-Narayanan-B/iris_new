@@ -58,7 +58,7 @@ stages:
     params:
       params.yaml:
         estimators.DecisionTreeClassifier.params.criterion: entropy
-        estimators.DecisionTreeClassifier.params.max_depth: 1
+        estimators.DecisionTreeClassifier.params.max_depth: 2
     outs:
     - path: report/params.json
       hash: md5
